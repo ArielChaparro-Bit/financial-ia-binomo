@@ -1,0 +1,26 @@
+services:
+  # API Backend
+  - type: web
+    name: ia-financiera-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python start_api.py
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9
+      - key: PORT
+        value: 5000
+
+  # Mobile App Frontend
+  - type: web
+    name: ia-financiera-mobile
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: cd mobile_app && python app.py
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9
+      - key: PORT
+        value: 8080
+      - key: API_BASE_URL
+        value: https://ia-financiera-api.onrender.com 
