@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprender - IA Financiera</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            min-height: 100vh;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px 0;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .header h1 {
+            color: #667eea;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .learning-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            border-left: 4px solid #667eea;
+        }
+
+        .learning-card h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .progress-bar {
+            background: #e9ecef;
+            height: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transition: width 0.5s ease;
+        }
+
+        .tip-card {
+            background: #e8f5e8;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border-left: 4px solid #28a745;
+        }
+
+        .tip-card h4 {
+            color: #28a745;
+            margin-bottom: 8px;
+        }
+
+        .btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .btn:hover {
+            background: #5a6fd8;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .stat-card {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid #e9ecef;
+        }
+
+        .stat-number {
+            font-size: 24px;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .back-btn {
+            background: #6c757d;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="back-btn" onclick="window.location.href='/'">
+            <i class="fas fa-arrow-left"></i> Volver
+        </button>
+
+        <div class="header">
+            <h1><i class="fas fa-graduation-cap"></i> Centro de Aprendizaje</h1>
+            <p>Mejora tu IA paso a paso</p>
+        </div>
+
+        <div class="learning-card">
+            <h3><i class="fas fa-chart-line"></i> Nivel de IA</h3>
+            <div class="progress-bar">
+                <div id="ai-progress" class="progress-fill" style="width: 65%"></div>
+            </div>
+            <p>Nivel 6 de 10 - IA Avanzada</p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number" id="total-feedback">0</div>
+                <div class="stat-label">Feedback Dado</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="learning-streak">0</div>
+                <div class="stat-label">Días Consecutivos</div>
+            </div>
+        </div>
+
+        <div class="tip-card">
+            <h4><i class="fas fa-lightbulb"></i> Consejo del Día</h4>
+            <p>La IA aprende mejor cuando das feedback inmediato después de cada predicción. ¡No esperes!</p>
+        </div>
+
+        <div class="learning-card">
+            <h3><i class="fas fa-trophy"></i> Logros Desbloqueados</h3>
+            <ul style="list-style: none; padding: 0;">
+                <li style="padding: 8px 0; border-bottom: 1px solid #eee;">
+                    <i class="fas fa-check-circle" style="color: #28a745;"></i> Primera Predicción
+                </li>
+                <li style="padding: 8px 0; border-bottom: 1px solid #eee;">
+                    <i class="fas fa-check-circle" style="color: #28a745;"></i> 10 Predicciones
+                </li>
+                <li style="padding: 8px 0; border-bottom: 1px solid #eee;">
+                    <i class="fas fa-check-circle" style="color: #28a745;"></i> 50% Precisión
+                </li>
+                <li style="padding: 8px 0; border-bottom: 1px solid #eee;">
+                    <i class="fas fa-circle" style="color: #ddd;"></i> 100 Predicciones
+                </li>
+                <li style="padding: 8px 0;">
+                    <i class="fas fa-circle" style="color: #ddd;"></i> 80% Precisión
+                </li>
+            </ul>
+        </div>
+
+        <div class="learning-card">
+            <h3><i class="fas fa-cog"></i> Configuración de Aprendizaje</h3>
+            <p><strong>Modo de Aprendizaje:</strong> Automático</p>
+            <p><strong>Frecuencia de Actualización:</strong> Cada 10 predicciones</p>
+            <p><strong>Memoria de Datos:</strong> Últimos 1000 registros</p>
+        </div>
+
+        <button class="btn btn-secondary" onclick="exportLearningData()">
+            <i class="fas fa-download"></i> Exportar Datos de Aprendizaje
+        </button>
+
+        <button class="btn" onclick="resetLearning()">
+            <i class="fas fa-redo"></i> Reiniciar Aprendizaje
+        </button>
+    </div>
+
+    <script>
+        // Simular datos de aprendizaje
+        function loadLearningData() {
+            document.getElementById('total-feedback').textContent = Math.floor(Math.random() * 50) + 20;
+            document.getElementById('learning-streak').textContent = Math.floor(Math.random() * 10) + 1;
+        }
+
+        function exportLearningData() {
+            alert('Función de exportación en desarrollo. Los datos se guardan automáticamente.');
+        }
+
+        function resetLearning() {
+            if (confirm('¿Estás seguro? Esto reiniciará todo el aprendizaje de la IA.')) {
+                alert('Aprendizaje reiniciado. La IA comenzará desde cero.');
+                loadLearningData();
+            }
+        }
+
+        // Cargar datos al inicio
+        loadLearningData();
+    </script>
+</body>
+</html> 

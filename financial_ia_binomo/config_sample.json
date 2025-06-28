@@ -1,0 +1,24 @@
+{
+  "model_settings": {
+    "model_type": "random_forest",
+    "n_estimators": 100,
+    "max_depth": 10,
+    "random_state": 42
+  },
+  "api_settings": {
+    "host": "0.0.0.0",
+    "port": 5000,
+    "debug": false
+  },
+  "data_settings": {
+    "data_source": "sample",
+    "timeframe": "1m",
+    "sample_size": 100
+  },
+  "risk_settings": {
+    "max_position_size": 0.02,
+    "stop_loss": 0.05,
+    "take_profit": 0.1,
+    "max_drawdown": 0.2
+  }
+}

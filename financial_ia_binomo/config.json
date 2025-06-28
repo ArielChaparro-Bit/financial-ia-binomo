@@ -1,0 +1,110 @@
+{
+  "trading": {
+    "enabled": false,
+    "initial_balance": 10000,
+    "max_position_size": 0.05,
+    "min_confidence": 0.7,
+    "max_daily_trades": 20,
+    "max_daily_loss": 0.05,
+    "demo_mode": true
+  },
+  "model": {
+    "path": "models/simple_model.pkl",
+    "scaler_path": "models/simple_model_scaler.pkl",
+    "features_path": "models/simple_model_features.pkl",
+    "sequence_length": 30,
+    "prediction_threshold": 0.5
+  },
+  "risk_management": {
+    "max_drawdown": 0.15,
+    "stop_loss_pct": 0.02,
+    "take_profit_ratio": 2.0,
+    "max_consecutive_losses": 5,
+    "kelly_criterion": true,
+    "position_sizing": "fixed"
+  },
+  "data": {
+    "symbols": ["EURUSD", "GBPUSD", "USDJPY", "BTCUSD", "ETHUSD"],
+    "timeframe": "1m",
+    "update_interval": 60,
+    "sources": ["binomo", "yahoo", "alpha_vantage"],
+    "min_data_points": 1000
+  },
+  "api": {
+    "host": "0.0.0.0",
+    "port": 8080,
+    "base_url": "http://localhost:8080",
+    "timeout": 10,
+    "retry_attempts": 3,
+    "debug": false
+  },
+  "backtesting": {
+    "initial_balance": 10000,
+    "commission": 0.001,
+    "slippage": 0.0001,
+    "start_date": "2023-01-01",
+    "end_date": "2023-12-01"
+  },
+  "optimization": {
+    "max_trials": 50,
+    "metric": "f1_score",
+    "cv_splits": 3,
+    "random_search": true
+  },
+  "logging": {
+    "level": "INFO",
+    "file": "logs/trading.log",
+    "max_size": "10MB",
+    "backup_count": 5
+  },
+  "notifications": {
+    "email": {
+      "enabled": false,
+      "smtp_server": "smtp.gmail.com",
+      "smtp_port": 587,
+      "username": "",
+      "password": ""
+    },
+    "telegram": {
+      "enabled": false,
+      "bot_token": "",
+      "chat_id": ""
+    }
+  },
+  "binomo_api": {
+    "enabled": false,
+    "api_key": "",
+    "secret_key": "",
+    "demo_account": true
+  },
+  "model_settings": {
+    "model_type": "random_forest",
+    "n_estimators": 100,
+    "max_depth": 10,
+    "random_state": 42
+  },
+  "network": {
+    "local_ip": "192.168.100.17",
+    "api_host": "0.0.0.0",
+    "api_port": 8080,
+    "mobile_host": "192.168.100.17",
+    "mobile_port": 8080,
+    "api_url": "http://192.168.100.17:8080",
+    "local_api_url": "http://localhost:8080"
+  },
+  "cloud_settings": {
+    "api_url": "https://ia-financiera-api.onrender.com",
+    "auto_deploy": true
+  },
+  "data_settings": {
+    "data_source": "binomo",
+    "timeframe": "1m",
+    "sample_size": 100
+  },
+  "risk_settings": {
+    "max_position_size": 0.02,
+    "stop_loss": 0.05,
+    "take_profit": 0.10,
+    "max_drawdown": 0.20
+  }
+} 
